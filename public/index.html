@@ -1,24 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+        integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Kitap Özeti</title>
+</head>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<body>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="menu">
+                <div class="logo nav-item"><a href=""><i class="bi bi-journal-bookmark"></i> Summary</a></div>
+                <li class="menu-button nav-item"><i class="bi bi-list"></i></li>
+            </div>
+            <ul class="navbar-nav main-menu visible">
+                <li class="nav-item"><a href=""><i class="bi bi-star"></i> Listem</a></li>
+                <li class="nav-item"><a href=""><i class="bi bi-book-half"></i> Özetler</a></li>
+                <li class="nav-item"><a href=""><i class="bi bi-person"></i> Profil</a></li>
+            </ul>
+        </div>
+        <div class="category">
+            <ul class="navbar-nav visible">
+                <li class="nav-item main-menu-item"><a href=""><i class="bi bi-star"></i> Listem</a></li>
+                <li class="nav-item main-menu-item"><a href=""><i class="bi bi-book-half"></i> Özetler</a></li>
+                <li class="nav-item main-menu-item"><a href=""><i class="bi bi-person"></i> Profil</a></li>
+                <li class="nav-item"><a href="">Roman</a></li>
+                <li class="nav-item"><a href="">Bilim Kurgu</a></li>
+                <li class="nav-item"><a href="">Tarih</a></li>
+                <li class="nav-item"><a href="">Felsefe</a></li>
+                <li class="nav-item"><a href="">Biyogrofi</a></li>
+                <li class="nav-item"><a href="">Sağlık</a></li>
+                <li class="nav-item"><a href="">Çocuk</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide" style="background-image: url('img/slider1.jpeg');"></div>
+                <div class="slide" style="background-image: url('img/slider2.jpeg');"></div>
+                <div class="slide" style="background-image: url('img/slider3.jpeg');"></div>
+            </div>
+            <button class="prev">‹</button>
+            <button class="next">›</button>
+        </div>
+    </main>
+
+    <script src="./js/script.js"></script>
+</body>
+
 </html>
+
+<!-- https://colorhunt.co/palette/f8ededff8225b43f3f173b45 -->
