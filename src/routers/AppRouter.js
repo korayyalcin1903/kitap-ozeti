@@ -7,12 +7,14 @@ import CreatePage from '../components/CreatePage'
 import EditPage from '../components/EditPage'
 import OzetPage from '../components/OzetPage'
 import HomePage from '../components/HomePage'
+import Details from '../components/Details'
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
         <Routes>
             <Route path='/' element={<HomePage />}/>
+            <Route path='ozet/:id' element={<Details />} />
             <Route path='/listem' element={<MyListPage />}/>
             <Route path='/profile' element={<Profile />}/>
             <Route path='/category/:category_name' element={<Category />}/>

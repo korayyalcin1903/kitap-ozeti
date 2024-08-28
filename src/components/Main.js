@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from './Card'
 
 const Main = () => {
   return (
@@ -11,6 +12,14 @@ const Main = () => {
             </div>
             <button className="prev button">‹</button>
             <button className="next button">›</button>
+        </div>
+        <h3 className='mx-3 py-3'>Özetler</h3>
+        <hr />
+        <div className="row mt-3">
+          <div className="col-4">
+            <Card />
+          </div>
+          
         </div>
     </main>
   )

@@ -1,0 +1,32 @@
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.col-4{
+}
+
+.card{
+    border: .09rem solid gray;
+    border-radius: .5rem;
+    margin: .5rem;
+    width: 20rem ;
+}
+
+.card-body{
+    padding: .5rem;
+}
+
+.img-fluid{
+    border-radius: .5rem .5rem 0 0;
+    width: 100%;
+    margin: 0;
+}
+
+.title{
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 0;
+}
