@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('./css/padding-and-margin.css');
+@import url('./css/input.css');
+@import url('./css/button.css');
 
 :root {
     --primary-color: #F8EDED;
@@ -51,7 +54,7 @@ nav{
 }
 
 .menu-button {
-    border: 1px solid var(--secondary-color);
+    border: 1px solid gray;
     border-radius: 0.3rem;
     list-style: none;
     display: none !important;
@@ -132,7 +135,7 @@ nav{
     height: 500px;
 }
 
-button {
+.button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -153,6 +156,10 @@ button {
 }
 
 @media screen and (max-width: 600px) {
+    .navbar {
+        border-bottom: .09rem solid gray;
+    }
+
     .container {
         max-width: 500px;
     }
@@ -211,6 +218,10 @@ button {
 }
 
 @media screen and (max-width: 480px) {
+    .navbar {
+        border-bottom: .09rem solid gray;
+    }
+    
     .container {
         max-width: 350px;
     }

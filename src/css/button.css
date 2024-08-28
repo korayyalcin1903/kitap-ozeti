@@ -1,0 +1,23 @@
+:root {
+    --primary-color: #F8EDED;
+    --secondary-color: #FF8225;
+    --text-color: #212529;
+}
+
+.btn{
+    background-color: white;
+    border: .1rem solid gray;
+    width: 4rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.btn-outline-secondary{
+    border-radius: .3rem;
+}
+
+.btn-outline-secondary:hover{
+    background-color: var(--secondary-color);
+    transition: all .5s;
+    color: #fff;
+}
