@@ -15,7 +15,7 @@ const Header = () => {
             </ul>
         </div>
         <div className="category">
-            <ul className="navbar-nav visible">
+            <ul className="navbar-nav">
                 <li className="nav-item main-menu-item"><NavLink to="/listem"><i className="bi bi-star"></i> Listem</NavLink></li>
                 <li className="nav-item main-menu-item"><NavLink to="/profile"><i className="bi bi-person"></i> Profil</NavLink></li>
                 <li className="nav-item"><NavLink to="/category/roman">Roman</NavLink></li>

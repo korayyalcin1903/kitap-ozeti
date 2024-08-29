@@ -6,13 +6,25 @@
 }
 
 .col-4{
+    width: 20rem ;
+}
+
+.col-6{
+    width: 28rem;
 }
 
 .card{
     border: .09rem solid gray;
     border-radius: .5rem;
     margin: .5rem;
-    width: 20rem ;
+}
+
+.card .img-fluid{
+    height: 20rem;
+}
+
+.details div img{
+    height: 40rem;
 }
 
 .card-body{

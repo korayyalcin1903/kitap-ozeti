@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 
 const CreatePage = () => {
-  const ozetler = [
-    {
-      id: 1,
-      name: 'Kitap 1',
-      author: 'yazar',
-      description: 'iyi kitap',
-    }
-  ]
+  // const ozetler = [
+  //   {
+  //     id: 1,
+  //     name: 'Kitap 1',
+  //     author: 'yazar',
+  //     description: 'iyi kitap',
+  //   }
+  // ]
 
-  const [ozets, setOzets] = useState(ozetler)
+  const [ozets, setOzets] = useState('')
   
   const onNameChange = (e) =>{
     const name = e.target.value
