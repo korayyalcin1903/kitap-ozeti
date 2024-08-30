@@ -1,5 +1,5 @@
 import database from "../firebase/firebaseConfigure"
-import { push, ref } from "firebase/database"
+import { child, get, push, ref } from "firebase/database"
 
 export const addOzet = (ozet) =>({
     type: 'ADD_OZET',
@@ -17,5 +17,30 @@ export const addOzetToDatabase = (data = {}) => {
                 ...ozet
             }))
         })
+    }
+}
+
+export const listOzets = (ozets) => ({
+    type: 'LIST_OZETS',
+    ozets
+})
+
+export const getOzetsFromDatabase = () => {
+    return (dispatch, getState) => {
+
+        return get(child(ref(database), "/"))
+            .then((snapshot) => {
+                const ozets = []
+
+                snapshot.forEach((ozet) => {
+                    const result = ozet.val()
+
+                    ozets.push({
+                        id: ozet.key,
+                        ...result
+                    })
+                })
+                dispatch(listOzets(ozets))
+            })
     }
 }

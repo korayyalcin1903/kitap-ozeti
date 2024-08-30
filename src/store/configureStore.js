@@ -7,7 +7,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const configureStore = () => {
     const store = legacy_createStore(
         combineReducers({
-            ozet: ozetReducer,
+            ozets: ozetReducer,
         }),
         composeEnhancers(applyMiddleware(thunk))
     )

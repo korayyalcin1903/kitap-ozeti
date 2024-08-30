@@ -35,12 +35,10 @@ export class CreatePage extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    // this.props.onSubmit({
-    //   name: this.state.name,
-    //   author: this.state.author,
-    //   description: this.state.description,
-    //   image: this.state.image
-    // })
+    if(this.state.image){
+      const formData = new FormData()
+      formData.append()
+    }
     this.props.dispatch(addOzetToDatabase(this.state))
   }
 
