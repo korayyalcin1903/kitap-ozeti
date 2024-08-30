@@ -156,6 +156,18 @@ nav{
     right: 10px;
 }
 
+footer{
+    background-color: var(--secondary-color);
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer h3{
+    color: #212529;
+}
+
 @media screen and (max-width: 600px) {
     .navbar {
         border-bottom: .09rem solid gray;

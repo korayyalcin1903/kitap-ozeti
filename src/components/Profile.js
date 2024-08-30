@@ -1,5 +1,5 @@
 import CreatePage from './CreatePage'
-import Header from './Header'
+import Layout from '../layout/Layout'
 
 import React, { Component } from 'react'
 
@@ -7,8 +7,9 @@ export class Profile extends Component {
     render() {
       return (
         <>
-          <Header />
-          <CreatePage />
+          <Layout>
+            <CreatePage />
+          </Layout>
         </>
       )
     }

@@ -1,66 +1,76 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react'
+import { addOzetToDatabase } from '../actions/ozets'
+import { connect } from 'react-redux'
 
-const CreatePage = () => {
-  // const ozetler = [
-  //   {
-  //     id: 1,
-  //     name: 'Kitap 1',
-  //     author: 'yazar',
-  //     description: 'iyi kitap',
-  //   }
-  // ]
+export class CreatePage extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      name: '',
+      author: '',
+      description: '',
+      image: ''
+    }
+  }
 
-  const [ozets, setOzets] = useState('')
-  
-  const onNameChange = (e) =>{
+   onNameChange = (e) =>{
     const name = e.target.value
-    setOzets(() => ({name:name}))
+    this.setState(() => ({name}))
   }
 
-  const onAuthorChange = (e) =>{
+  onAuthorChange = (e) =>{
     const author = e.target.value
-    setOzets(() => ({author:author}))
+    this.setState(() => ({author}))
   }
 
-  const onDescriptionChange = (e) =>{
+  onDescriptionChange = (e) =>{
     const description = e.target.value
-    setOzets(() => ({description:description}))
+    this.setState(() => ({description}))
   }
 
-  const onImageChange = (e) =>{
+  onImageChange = (e) =>{
     const image = e.target.files[0].name
-    setOzets(() => ({image}))
+    this.setState(() => ({image}))
   }
 
-  const onSubmit = (e) => {
+  onSubmit = (e) => {
     e.preventDefault()
+    // this.props.onSubmit({
+    //   name: this.state.name,
+    //   author: this.state.author,
+    //   description: this.state.description,
+    //   image: this.state.image
+    // })
+    this.props.dispatch(addOzetToDatabase(this.state))
   }
 
-  return (
-    <div className="container">
+  render() {
+    return (
+      <div className="container pb-3">
       <h1 className='px-1'>Özet Ekle</h1>
       <hr/>
-      <form onSubmit={onSubmit} encType='multipart/form-data'>
+      <form onSubmit={this.onSubmit} encType='multipart/form-data'>
           <div className="mb-1 p-1 input-group">
             <label htmlFor="name" className='form-label mb-1'>Kitap Adı</label>
-            <input type="text" className='form-input' onChange={onNameChange}/>
+            <input type="text" className='form-input' onChange={this.onNameChange}/>
           </div>
           <div className="mb-1 p-1 input-group">
             <label htmlFor="author" className='form-label mb-1'>Yazar</label>
-            <input type="text" className='form-input' onChange={onAuthorChange}/>
+            <input type="text" className='form-input' onChange={this.onAuthorChange}/>
           </div>
           <div className="mb-1 p-1 input-group">
             <label htmlFor="description" className='form-label mb-1'>Kitap Özeti</label>
-            <textarea name="description" rows={4} className='form-area' onChange={onDescriptionChange}></textarea>
+            <textarea name="description" rows={4} className='form-area' onChange={this.onDescriptionChange}></textarea>
           </div>
           <div className="mb-1 p-1 input-group img-form">
             <label htmlFor="image" className='form-label mb-1'>Kitap Resmi</label>
-              <input type="file" className='form-input' onChange={onImageChange}/>
+              <input type="file" className='form-input' onChange={this.onImageChange}/>
           </div>
           <button className='btn btn-outline-secondary mx-1'>Gönder</button>
       </form>
     </div>
-  )
+    )
+  }
 }
 
-export default CreatePage
+export default connect()(CreatePage)

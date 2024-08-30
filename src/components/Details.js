@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from './Header'
 import { useLocation } from 'react-router-dom'
+import Layout from '../layout/Layout'
 
 const Details = ({props}) => {
   const location = useLocation()
@@ -8,7 +8,7 @@ const Details = ({props}) => {
   
   return (
     <>
-      <Header />
+    <Layout>
       <div className="container py-3">
         <div className='row details'>
           <div className="col-6">
@@ -21,6 +21,8 @@ const Details = ({props}) => {
           </div>
         </div>
       </div>
+
+    </Layout>
     </>
   )
 }

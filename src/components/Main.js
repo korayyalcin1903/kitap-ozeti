@@ -8,7 +8,7 @@ const Main = () => {
       name: 'Savaş Sanatı',
       author: 'Sun Tzu',
       description: "Çinli filozof Sun-Tzu'nun günümüzden 2.500 yıl önce yazdığı Savaş Sanatı adlı eser 13 bölümde toplanmış 384 savaş teorisinden oluşmaktadır. Bu teorilere temel olan ilkeler savaş alanında olduğu kadar ekonomi ve politika alanlarında da liderlere yol göstermektedir. En önemli ilkeler ise zaferin mümkün olduğu taktirde savaşsız kazanılması ile, savaş ve rekabette üstünlük kazanma yollarını bulmak için fiziki unsurları, psikolojik faktörleri ve politikayı doğru bir şekilde analiz etmektir. Savaş Sanatı strateji konusundaki en önemli kitaplardan birisidir. Ancak, Clausewitz'in Savaş Üzerine adlı yapıtı ile karşılaştırılabilir. 20.yüzyılın büyük liderlerinin çoğunun yararlandığı bu kitabın önemi, savaşla ilgili evrensel prensipleri keşfetmiş olmasından kaynaklanmaktadır. Sun-Tzu o derece günceldir ki, dünyanın bütün askeri akedemilerinde her yıl sayısız seminer ve tez konusu olmaktadır. Dolaylı Strateji kavramını ortaya atan Liddel-Hart'da fikirlerinin özünü Sun-Tzu'ya borçlu olduğunu saklamamaktadır. Bu ciltte Savaş Sanatını TAM METİN olarak okuyabilecek ve ayrıca her bölüm ile ilgili açıklamalı yorumları bulabileceksiniz. Keza Sun-Tzu'nun yaşadığı dönem ve tarihi çerçeve konusunda da geniş bir ek bilgilenme sağlanmaktadır.",
-      image: '1.jpg'
+      image: '1.jpg',
     },
     {
       id: 2,
