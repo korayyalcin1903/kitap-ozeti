@@ -20,7 +20,7 @@ const Main = (props) => {
             <button className="prev button">‹</button>
             <button className="next button">›</button>
         </div>
-        <div className="container">
+        <div className="">
           <h3 className='mx-3 py-3'>Özetler</h3>
         </div>
         <hr />
@@ -39,7 +39,7 @@ const Main = (props) => {
 
 
 const mapStateToProps = (state) => ({
-  ozets: state.ozets // 'state.ozets' doğru şekilde yapılandırılmış olmalı
+  ozets: state.ozets 
 });
 
 const mapDispatchToProps = (dispatch) => ({

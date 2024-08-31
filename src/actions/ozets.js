@@ -7,11 +7,12 @@ export const addOzet = (ozet) =>({
 })
 
 export const addOzetToDatabase = (data = {}) => {
+    console.log(data)
     return (dispatch, getState) => {
-        const {name='', author='', description='', image=''} = data
-        const ozet = {name,author,description,image}
+        const {name='', author='', description='', image='', category=''} = data
+        const ozet = {name,author,description,image, category}
 
-        push(ref(database), ozet).then((res) => {
+        push(ref(database, 'ozets'), ozet).then((res) => {
             dispatch(addOzet({
                 id:res.key,
                 ...ozet
@@ -28,7 +29,7 @@ export const listOzets = (ozets) => ({
 export const getOzetsFromDatabase = () => {
     return (dispatch, getState) => {
 
-        return get(child(ref(database), "/"))
+        return get(child(ref(database), "/ozets"))
             .then((snapshot) => {
                 const ozets = []
 
