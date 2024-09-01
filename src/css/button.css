@@ -4,12 +4,15 @@
     --text-color: #212529;
 }
 
+button{
+    margin: 0;
+    padding: 0 !important;
+}
+
 .btn{
     background-color: white;
     border: .1rem solid gray;
-    width: 6rem;
-    height: 2rem;
-    padding: 0 1rem;
+    padding: .5rem 1rem;
     cursor: pointer;
     text-decoration: none;
     color: #212529;
@@ -17,6 +20,7 @@
 
 .btn-outline-secondary{
     border-radius: .3rem;
+    padding: .5rem 1rem !important;
 }
 
 .btn-outline-secondary:hover{
@@ -36,4 +40,17 @@
     background-color: #fa3e00;
     transition: all .5s;
     color: #fff;
+}
+
+.btn-danger {
+    background-color: #C7253E;
+    color: #fff;
+    border-radius: .3rem;
+    padding: .2rem 1rem !important;
+    margin-left: .5rem;
+
+}
+
+.button-group{
+    display: flex;
 }

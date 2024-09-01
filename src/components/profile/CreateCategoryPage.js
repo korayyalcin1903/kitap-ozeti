@@ -7,9 +7,12 @@ export class CreateCategoryPage extends Component {
   constructor(props){
     super(props)
     this.state = {
-      name: ''
+      name: '',
+      error: ''
     }
   }
+
+
 
   onNameChange = (e) => {
     const name = e.target.value
@@ -18,7 +21,13 @@ export class CreateCategoryPage extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    this.props.dispatch(addCategoryToDatabase(this.state))
+    if(this.state.name === ''){
+      this.setState({error:'Lütfen bir kategori giriniz.'})
+    } else {
+      this.props.dispatch(addCategoryToDatabase(this.state))
+      this.setState({error: 'Başarıyla Kategori eklendi'})
+    }
+
   }
 
 
@@ -31,8 +40,9 @@ export class CreateCategoryPage extends Component {
             <hr/>
             <form onSubmit={this.onSubmit} encType='multipart/form-data'>
                 <div className="mb-1 p-1 input-group">
-                  <label htmlFor="name" className='form-label mb-1'>Kitap Adı</label>
+                  <label htmlFor="name" className='form-label mb-1'>Kategori Adı</label>
                   <input type="text" className='form-input' onChange={this.onNameChange}/>
+                  {this.state.error && <p className='error'>{this.state.error}</p>}
                 </div>
                 <button className='btn btn-outline-secondary mx-1'>Gönder</button>
             </form>

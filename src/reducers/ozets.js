@@ -18,6 +18,19 @@ const ozetReducer = (state = ozetState, action) => {
             })
         case 'LIST_OZETS':
             return action.ozets
+        case 'FILTER_OZET':
+            return [action.ozets]
+        case 'EDIT_OZET':
+            return state.map((ozet) => {
+                if(ozet.id === action.id){
+                    return {
+                        ...ozet,
+                        ...action.updates
+                    }
+                } else {
+                    return ozet
+                }
+            })
         default:
             return state
     }

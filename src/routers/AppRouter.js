@@ -8,6 +8,7 @@ import Details from '../components/Details'
 import CreatePage from '../components/profile/CreatePage'
 import CreateCategoryPage from '../components/profile/CreateCategoryPage'
 import Profile from '../components/profile/Profile'
+import OzetList from '../components/profile/OzetList'
 
 const AppRouter = () => {
   return (
@@ -17,7 +18,9 @@ const AppRouter = () => {
             <Route path='/ozet/:id' element={<Details />} />
             <Route path='/listem' element={<MyListPage />}/>
             <Route path='/profile' element={<Profile/>}/>
-            <Route path='/profile/create_ozet' element={<CreatePage />}/>
+            <Route path='/profile/ozet_list' element={<OzetList />}/>
+            <Route path='/profile/create_ozet' element={<CreatePage/>}/>
+            <Route path='/profile/edit_ozet/:id' element={<CreatePage/>}/>
             <Route path='/profile/create_category' element={<CreateCategoryPage />}/>
             <Route path='/category/:category_name' element={<Category />}/>
             <Route path='/create' element={<CreatePage />}/>

@@ -13,6 +13,9 @@ export class Profile extends Component {
                 <div className='col-4'>
                   <ul className='list-group'>
                     <li className='list-group-item'>
+                      <Link to='/profile/ozet_list'> Özetlerim </Link>
+                    </li>
+                    <li className='list-group-item'>
                       <Link to="/profile/create_ozet"> Ozet Ekle</Link>
                     </li>
                     <li className='list-group-item'>

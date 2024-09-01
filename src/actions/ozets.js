@@ -1,5 +1,5 @@
 import database from "../firebase/firebaseConfigure"
-import { child, get, push, ref } from "firebase/database"
+import { child, get, push, ref, remove, update } from "firebase/database"
 
 export const addOzet = (ozet) =>({
     type: 'ADD_OZET',
@@ -43,5 +43,47 @@ export const getOzetsFromDatabase = () => {
                 })
                 dispatch(listOzets(ozets))
             })
+    }
+}
+
+export const filterOzet = (ozets) => ({
+    type: 'FILTER_OZET',
+    ozets
+})
+
+export const filterOzetToDatabse = (id) => {
+    return (dispatch) => {
+        return get(child(ref(database), `/ozets/${id}`))
+                .then((snapshot) => {
+                    const result = snapshot.val()
+                    dispatch(filterOzet(result))
+                    return result
+                })
+    }
+}
+
+export const editOzet = (id, updates) => ({
+    type: "EDIT_OZET",
+    id,
+    updates
+})
+
+export const editOzetToDatabase = (id, updates) => {
+    return (dispatch) => {
+        return update(ref(database, `/ozets/${id}`), updates)
+                .then(() => {
+                    dispatch(editOzet(id, updates))
+                })
+    }
+}
+
+export const removeOzet = (id) => ({
+    type: 'REMOVE_OZET'
+})
+
+export const removeOzetFromDatabase = (id) => {
+    return (dispatch) => {
+        return remove(ref(database, `/ozets/${id}`))
+                .then(removeOzet(id))
     }
 }

@@ -1,0 +1,21 @@
+:root {
+    --primary-color: #F8EDED;
+    --secondary-color: #FF8225;
+    --text-color: #212529;
+}
+
+table{
+    width: 100%;
+    margin: 1rem 0;
+}
+
+table, tr, td{
+    border: 1px solid var(--secondary-color);
+    border-radius: .5rem;
+    text-align: center;
+}
+
+td img{
+    width: 3rem !important;
+    height: 3rem;
+}

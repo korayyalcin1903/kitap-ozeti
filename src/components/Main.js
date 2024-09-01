@@ -6,8 +6,8 @@ import { getOzetsFromDatabase } from '../actions/ozets'
 
 const Main = (props) => {
   useEffect(() => {
-    props.getOzetsFromDatabase(); // Veritabanından verileri çek
-  }, [props]);
+    props.getOzetsFromDatabase()
+  }, [props])
 
   return (
     <main>
