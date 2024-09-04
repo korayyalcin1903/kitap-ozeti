@@ -9,6 +9,7 @@ import CreatePage from '../components/profile/CreatePage'
 import CreateCategoryPage from '../components/profile/CreateCategoryPage'
 import Profile from '../components/profile/Profile'
 import OzetList from '../components/profile/OzetList'
+import Login from '../components/profile/Login'
 
 const AppRouter = () => {
   return (
@@ -22,6 +23,7 @@ const AppRouter = () => {
             <Route path='/profile/create_ozet' element={<CreatePage/>}/>
             <Route path='/profile/edit_ozet/:id' element={<CreatePage/>}/>
             <Route path='/profile/create_category' element={<CreateCategoryPage />}/>
+            <Route path='/login' element={<Login />}/>
             <Route path='/category/:category_name' element={<Category />}/>
             <Route path='/create' element={<CreatePage />}/>
             <Route path='/edit/:id' element={<EditPage />}/>

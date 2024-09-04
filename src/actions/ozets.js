@@ -7,10 +7,10 @@ export const addOzet = (ozet) =>({
 })
 
 export const addOzetToDatabase = (data = {}) => {
-    console.log(data)
     return (dispatch, getState) => {
+        const uid = localStorage.getItem('userid')
         const {name='', author='', description='', image='', category=''} = data
-        const ozet = {name,author,description,image, category}
+        const ozet = {name,author,description,image, category, uid}
 
         push(ref(database, 'ozets'), ozet).then((res) => {
             dispatch(addOzet({
