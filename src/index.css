@@ -84,6 +84,7 @@ nav{
 
 .container {
     max-width: 1024px;
+    min-height: 78vh !important;
     margin: auto;
 }
 
@@ -203,6 +204,10 @@ nav{
     background-color: var(--primary-color);
 }
 
+.text-align-center {
+    text-align: center;
+}
+
 .error{
     color: var(--secondary-color);
 }
@@ -220,6 +225,11 @@ footer h3{
     color: #212529;
     padding: 0 1rem;
     font-size: 1rem;
+}
+
+li:has(> a.active) {
+    background-color: var(--primary-color);
+    border-radius: .3rem;
 }
 
 @media screen and (max-width: 600px) {

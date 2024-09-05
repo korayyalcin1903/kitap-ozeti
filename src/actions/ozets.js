@@ -27,15 +27,13 @@ export const listOzets = (ozets) => ({
 })
 
 export const getOzetsFromDatabase = () => {
-    return (dispatch, getState) => {
-
+    return (dispatch) => {
         return get(child(ref(database), "/ozets"))
             .then((snapshot) => {
                 const ozets = []
 
                 snapshot.forEach((ozet) => {
                     const result = ozet.val()
-
                     ozets.push({
                         id: ozet.key,
                         ...result
@@ -43,6 +41,56 @@ export const getOzetsFromDatabase = () => {
                 })
                 dispatch(listOzets(ozets))
             })
+    }
+}
+
+export const filterUserOzet = (ozets) => ({
+    type: 'FILTER_USER_OZET',
+    ozets
+})
+
+export const filterUserOzetToDatabase = (userid) => {
+    return (dispatch) => {
+        return get(child(ref(database), `/ozets`))
+                .then((snapshot) => {
+                    const ozets = []
+                    
+                    snapshot.forEach((ozet) => {
+                        const result = ozet.val()
+                        if(result.uid === userid){
+                            ozets.push({
+                                id: ozet.key,
+                                ...result
+                            })
+                        }
+                    })
+                    dispatch(filterUserOzet(ozets))
+                })
+    }
+}
+
+export const filterCategoryOzet = (ozets) => ({
+    type: 'FILTER_CATEGORY_OZET',
+    ozets
+})
+
+export const filterCategoryOzetToDatabase = (category_id) => {
+    return (dispatch) => {
+        return get(child(ref(database), `/ozets`))
+                .then((snapshot) => {
+                    const ozets = []
+                    
+                    snapshot.forEach((ozet) => {
+                        const result = ozet.val()
+                        if(result.category === category_id){
+                            ozets.push({
+                                id: ozet.key,
+                                ...result
+                            })
+                        }
+                    })
+                    dispatch(filterCategoryOzet(ozets))
+                })
     }
 }
 
@@ -85,5 +133,30 @@ export const removeOzetFromDatabase = (id) => {
     return (dispatch) => {
         return remove(ref(database, `/ozets/${id}`))
                 .then(removeOzet(id))
+    }
+}
+
+export const listCategoryOzets = (ozets) => ({
+    type: 'LIST_CATEGORY_OZETS',
+    ozets
+})
+
+export const getCategoryFromDatabase = (category_id) => {
+    return (dispatch) => {
+        return get(child(ref(database), "/ozets"))
+            .then((snapshot) => {
+                const ozets = []
+
+                snapshot.forEach((ozet) => {
+                    const result = ozet.val()
+                    if(result.category === category_id){
+                        ozets.push({
+                            id: ozet.key,
+                            ...result
+                        })
+                    }
+                })
+                dispatch(listCategoryOzets(ozets))
+            })
     }
 }

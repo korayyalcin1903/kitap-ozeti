@@ -18,6 +18,10 @@ const ozetReducer = (state = ozetState, action) => {
             })
         case 'LIST_OZETS':
             return action.ozets
+        case 'LIST_CATEGORY_OZETS':
+            return action.ozets
+        case 'FILTER_USER_OZET':
+            return action.ozets
         case 'FILTER_OZET':
             return [action.ozets]
         case 'EDIT_OZET':

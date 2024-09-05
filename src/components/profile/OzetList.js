@@ -2,14 +2,14 @@ import React, { useEffect } from 'react'
 import Layout from '../../layout/Layout'
 import { Link } from 'react-router-dom'
 import { connect, useDispatch, useSelector } from 'react-redux'
-import { getOzetsFromDatabase, removeOzetFromDatabase } from '../../actions/ozets'
+import { filterUserOzetToDatabase, removeOzetFromDatabase } from '../../actions/ozets'
 
 const OzetList = () => {
     const dispatch = useDispatch()
     const ozets = useSelector(state => state.ozets)
 
     useEffect(() => {
-        dispatch(getOzetsFromDatabase())
+        dispatch(filterUserOzetToDatabase(localStorage.getItem('userid')))
     },[dispatch])
 
     const handleRemoveOzet = (id) => {

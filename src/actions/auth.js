@@ -1,5 +1,10 @@
-import { signInWithPopup, signOut } from "firebase/auth"
+import { getAuth, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth"
 import { auth, googleAuthProvider } from "../firebase/firebaseConfigure"
+
+export const loginAction = (uid) => ({
+    type: 'LOGIN',
+    uid
+})
 
 export const login = () => {
     return signInWithPopup(auth, googleAuthProvider)
@@ -11,10 +16,25 @@ export const login = () => {
                 })
 }
 
-export const loginAction = (uid) => ({
-    type: 'LOGIN',
-    uid
+export const getUser = (user) => ({
+    type: 'GET_USER',
+    user
 })
+
+export const userFromDatabase = () => {
+    return (dispacth) => {
+        const auth = getAuth()
+
+        onAuthStateChanged(auth, (user) => {
+            if(user){
+                console.log(user.displayName)
+                dispacth(getUser(user))
+            } else {
+                dispacth(getUser(null))
+            }
+        })
+    }
+}
 
 export const logout = () => {
     localStorage.removeItem('userid')

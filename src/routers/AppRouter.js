@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import MyListPage from '../components/MyListPage'
-import Category from '../components/profile/CreateCategoryPage'
 import EditPage from '../components/EditPage'
 import HomePage from '../components/HomePage'
 import Details from '../components/Details'
@@ -10,6 +9,7 @@ import CreateCategoryPage from '../components/profile/CreateCategoryPage'
 import Profile from '../components/profile/Profile'
 import OzetList from '../components/profile/OzetList'
 import Login from '../components/profile/Login'
+import CategoryPage from '../components/CategoryPage'
 
 const AppRouter = () => {
   return (
@@ -24,7 +24,7 @@ const AppRouter = () => {
             <Route path='/profile/edit_ozet/:id' element={<CreatePage/>}/>
             <Route path='/profile/create_category' element={<CreateCategoryPage />}/>
             <Route path='/login' element={<Login />}/>
-            <Route path='/category/:category_name' element={<Category />}/>
+            <Route path='/category/:category_id' element={<CategoryPage />}/>
             <Route path='/create' element={<CreatePage />}/>
             <Route path='/edit/:id' element={<EditPage />}/>
         </Routes>
