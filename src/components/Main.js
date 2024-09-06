@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import { connect } from 'react-redux';
 import { getOzetsFromDatabase, searchOzetsFromDatabase } from '../actions/ozets';
-import SearchBar from './SearchBar';
+import SearchBar from './search/SearchBar';
 
 const Main = (props) => {
-  const [searchResults, setSearchResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
@@ -18,7 +17,6 @@ const Main = (props) => {
     setSearchTerm(searchTerm);
     if (searchTerm) {
       props.searchOzetsFromDatabase(searchTerm)
-        .then(results => setSearchResults(results));
     }
   };
 
@@ -42,7 +40,7 @@ const Main = (props) => {
         {props.ozets.length > 0 ? (
           props.ozets.map((ozet) => (
             <div className="col-4" key={ozet.id} {...ozet}>
-              <Card ozet={ozet} />
+              <Card ozet={ozet} key={ozet.id}/>
             </div>
           ))
         ) : (

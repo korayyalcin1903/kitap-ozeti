@@ -22,7 +22,7 @@ const SearchBar = ({ onSearch }) => {
                 value={search} 
                 onChange={searchText}
             />
-            <button className='btn btn-secondary' onClick={handleSearch}>
+            <button className='btn btn-search' onClick={handleSearch}>
                 <i className="bi bi-search"></i>
             </button>
         </div>
