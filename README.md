@@ -54,3 +54,9 @@ Bu uygulamayı yerel ortamınızda çalıştırmak için aşağıdaki adımları
 
 - Giriş yaptıysanız, kitap özetlerini ekleyebilir, düzenleyebilir ve silebilirsiniz.
 
+![localhost_3000_ (Orta)](https://github.com/user-attachments/assets/d69a4198-396d-43f1-8a84-8490bbf17223)
+![localhost_3000_ (1)](https://github.com/user-attachments/assets/ec37bd90-5ada-428c-a648-9347e3202738)
+![localhost_3000_profile](https://github.com/user-attachments/assets/6057774c-8b0e-418c-9e82-49a92c436bdb)
+![localhost_3000_profile (1)](https://github.com/user-attachments/assets/fb23c04e-c10b-4dda-99fc-86e634db305a)
+
+
