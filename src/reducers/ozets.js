@@ -35,6 +35,8 @@ const ozetReducer = (state = ozetState, action) => {
                     return ozet
                 }
             })
+        case 'SEARCH':
+            return action.ozets
         default:
             return state
     }

@@ -27,7 +27,6 @@ export const userFromDatabase = () => {
 
         onAuthStateChanged(auth, (user) => {
             if(user){
-                console.log(user.displayName)
                 dispacth(getUser(user))
             } else {
                 dispacth(getUser(null))

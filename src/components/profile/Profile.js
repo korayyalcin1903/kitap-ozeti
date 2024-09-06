@@ -13,7 +13,6 @@ const Profile = () => {
     dispatch(userFromDatabase())
   }, [dispatch])
 
-  console.log(user)
 
   return (
     <>

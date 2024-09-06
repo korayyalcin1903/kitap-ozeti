@@ -160,3 +160,28 @@ export const getCategoryFromDatabase = (category_id) => {
             })
     }
 }
+
+export const searchOzets = (ozets) => ({
+    type: 'SEARCH',
+    ozets
+})
+
+export const searchOzetsFromDatabase = (searchTerm) => {
+    return (dispatch) => {
+        return get(child(ref(database), "/ozets"))
+            .then((snapshot) => {
+                const ozets = [];
+
+                snapshot.forEach((ozet) => {
+                    const result = ozet.val();
+                    if (result.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        ozets.push({
+                            id: ozet.key,
+                            ...result
+                        });
+                    }
+                });
+                dispatch(searchOzets(ozets));
+            });
+    };
+}

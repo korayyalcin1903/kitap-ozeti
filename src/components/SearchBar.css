@@ -1,0 +1,14 @@
+.form-input{
+    width: 80%;
+    height: 2rem;
+}
+
+.btn {
+    height: 2rem;
+    width: 2rem;
+}
+
+.align-items-center{
+    display: flex;
+    justify-content: flex-start;
+}

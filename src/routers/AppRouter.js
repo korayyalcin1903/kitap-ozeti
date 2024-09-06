@@ -10,6 +10,8 @@ import Profile from '../components/profile/Profile'
 import OzetList from '../components/profile/OzetList'
 import Login from '../components/profile/Login'
 import CategoryPage from '../components/CategoryPage'
+import PrivateRoute from './PrivateRoute'
+import NotFound from '../components/NotFound'
 
 const AppRouter = () => {
   return (
@@ -18,15 +20,15 @@ const AppRouter = () => {
             <Route path='/' element={<HomePage />}/>
             <Route path='/ozet/:id' element={<Details />} />
             <Route path='/listem' element={<MyListPage />}/>
-            <Route path='/profile' element={<Profile/>}/>
-            <Route path='/profile/ozet_list' element={<OzetList />}/>
-            <Route path='/profile/create_ozet' element={<CreatePage/>}/>
-            <Route path='/profile/edit_ozet/:id' element={<CreatePage/>}/>
-            <Route path='/profile/create_category' element={<CreateCategoryPage />}/>
+            <Route path='/profile' element={<PrivateRoute><Profile/></PrivateRoute>}/>
+            <Route path='/profile/ozet_list' element={<PrivateRoute><OzetList /></PrivateRoute>}/>
+            <Route path='/profile/create_ozet' element={<PrivateRoute><CreatePage/></PrivateRoute>}/>
+            <Route path='/profile/edit_ozet/:id' element={<PrivateRoute><CreatePage/></PrivateRoute>}/>
+            <Route path='/profile/create_category' element={<PrivateRoute><CreateCategoryPage /></PrivateRoute>}/>
             <Route path='/login' element={<Login />}/>
             <Route path='/category/:category_id' element={<CategoryPage />}/>
-            <Route path='/create' element={<CreatePage />}/>
-            <Route path='/edit/:id' element={<EditPage />}/>
+            <Route path='/edit/:id' element={<PrivateRoute><EditPage /></PrivateRoute>}/>
+            <Route path='*' element={<NotFound/>} />
         </Routes>
     </BrowserRouter>
   )
